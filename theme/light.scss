@@ -1,0 +1,222 @@
+/*-- scss:defaults --*/
+
+$theme: "nord-light" !default;
+
+//
+// Color system
+//
+
+// Nord Color Palette
+$nord0: #2e3440;
+$nord1: #3b4252;
+$nord2: #434c5e;
+$nord3: #4c566a;
+$nord4: #d8dee9;
+$nord5: #e5e9f0;
+$nord6: #eceff4;
+$nord7: #8fbcbb;
+$nord8: #88c0d0;
+$nord9: #81a1c1;
+$nord10: #5e81ac;
+$nord11: #bf616a;
+$nord12: #d08770;
+$nord13: #ebcb8b;
+$nord14: #a3be8c;
+$nord15: #b48ead;
+
+// Base colors
+$white: #fff !default;
+$gray-100: $nord6 !default;
+$gray-200: $nord5 !default;
+$gray-300: $nord4 !default;
+$gray-400: mix($nord3, $nord4, 25%) !default;
+$gray-500: mix($nord3, $nord4, 50%) !default;
+$gray-600: mix($nord3, $nord4, 75%) !default;
+$gray-700: $nord3 !default;
+$gray-800: $nord2 !default;
+$gray-900: $nord1 !default;
+$black: $nord0 !default;
+
+// Theme colors
+$blue: $nord10 !default;
+$indigo: mix($nord10, $nord15, 70%) !default;
+$purple: $nord15 !default;
+$pink: mix($nord15, $nord11, 50%) !default;
+$red: $nord11 !default;
+$orange: $nord12 !default;
+$yellow: $nord13 !default;
+$green: $nord14 !default;
+$teal: $nord7 !default;
+$cyan: $nord8 !default;
+
+// Theme settings
+$primary: $nord10 !default;
+$secondary: $nord3 !default;
+$success: $nord14 !default;
+$info: $nord8 !default;
+$warning: $nord13 !default;
+$danger: $nord11 !default;
+$light: $nord5 !default;
+$dark: $nord0 !default;
+
+// Options
+$enable-shadows: false !default;
+$enable-gradients: false !default;
+$enable-rounded: true !default;
+$min-contrast-ratio: 2.6 !default;
+
+// Body
+$body-bg: $nord6 !default;
+$body-color: $nord0 !default;
+$body-emphasis-color: $nord1 !default;
+
+// Links
+$link-color: $nord10 !default;
+$link-decoration: none !default;
+$link-hover-color: $nord8 !default;
+$link-hover-decoration: underline !default;
+
+// Components
+$border-color: $nord4 !default;
+$border-radius: 0.375rem !default;
+$border-radius-lg: 0.5rem !default;
+$border-radius-sm: 0.25rem !default;
+
+// Typography
+$font-family-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto,
+  "Helvetica Neue", Arial, "Noto Sans", sans-serif !default;
+$font-family-monospace: "Fira Code", SFMono-Regular, Menlo, Monaco, Consolas,
+  "Liberation Mono", "Courier New", monospace !default;
+
+$headings-color: $nord0 !default;
+$headings-font-weight: 600 !default;
+
+// Navbar
+$navbar-bg: $nord6 !default;
+$navbar-fg: $nord3 !default;
+$navbar-hl: $nord0 !default;
+
+// These are Bootstrap's navbar-light variables
+$navbar-light-color: $nord3 !default;
+$navbar-light-hover-color: $nord0 !default;
+$navbar-light-active-color: $nord0 !default;
+$navbar-light-brand-color: $nord0 !default;
+$navbar-light-brand-hover-color: $nord10 !default;
+$navbar-light-toggler-icon-bg: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'><path stroke='#{$navbar-light-color}' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/></svg>") !default;
+$navbar-light-toggler-border-color: rgba($nord0, 0.1) !default;
+$navbar-light-bg: $nord6 !default;
+
+// Cards
+$card-border-width: 1px !default;
+$card-border-color: $nord4 !default;
+$card-border-radius: $border-radius !default;
+$card-bg: $white !default;
+$card-cap-bg: rgba($nord5, 0.75) !default;
+
+// Tables
+$table-bg: transparent !default;
+$table-accent-bg: rgba($nord4, 0.5) !default;
+$table-hover-bg: rgba($nord8, 0.1) !default;
+$table-border-color: $nord4 !default;
+
+// Forms
+$input-bg: $white !default;
+$input-border-color: $nord4 !default;
+$input-focus-border-color: $nord8 !default;
+$input-focus-box-shadow: 0 0 0 0.2rem rgba($nord8, 0.25) !default;
+
+// Code
+$pre-bg: $nord5 !default;
+$pre-color: $nord0 !default;
+$code-color: $nord11 !default;
+
+/*-- scss:rules --*/
+
+// Typography
+body {
+  -webkit-font-smoothing: antialiased;
+}
+
+// Code blocks
+pre {
+  border: 1px solid $nord4;
+  border-radius: $border-radius;
+  background-color: $nord6;
+  padding: 1rem;
+}
+
+code {
+  color: $nord11;
+  background-color: rgba($nord4, 0.5);
+  padding: 0.2em 0.4em;
+  border-radius: 3px;
+}
+
+// Links in headings
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  a {
+    color: $nord0;
+
+    &:hover {
+      color: $nord10;
+      text-decoration: none;
+    }
+  }
+}
+
+// Blockquotes
+blockquote {
+  border-left: 4px solid $nord9;
+  background-color: mix($nord6, $nord9, 95%);
+}
+
+// Tables
+.table {
+  th {
+    background-color: mix($nord6, $nord8, 90%);
+  }
+
+  tbody tr:nth-of-type(even) {
+    background-color: mix($nord6, $nord4, 97%);
+  }
+}
+
+// Cards hover effect
+.card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba($nord3, 0.1);
+  }
+}
+
+// Add subtle shadow to buttons
+.btn {
+  &:not(.btn-link) {
+    box-shadow: 0 1px 2px rgba($nord3, 0.1);
+  }
+
+  &:active {
+    transform: translateY(1px);
+  }
+}
+
+// Force navbar styles
+.navbar {
+  //   background-color: $nord6 !important;
+
+  .nav-link {
+    // color: $nord3 !important;
+
+    &:hover,
+    &:focus {
+      color: $nord0 !important;
+    }
+  }
+}

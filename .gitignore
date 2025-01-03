@@ -1,0 +1,33 @@
+# Quarto build artifacts
+_site/
+.quarto/
+.jupyter_cache/
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Editor directories and files
+.vscode/
+
+# Node modules
+node_modules/
+
+# Python virtual environments
+.venv/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Log files
+*.log
+
+# Local environment variables
+.env
+.env.local
+.env.*.local
+
+# Cache directories
+.cache/
+/.quarto/
+

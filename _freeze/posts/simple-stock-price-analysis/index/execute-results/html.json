@@ -1,0 +1,12 @@
+{
+  "hash": "17d0ad3614ca7812604bbf495723fbf6",
+  "result": {
+    "engine": "jupyter",
+    "markdown": "---\ntitle: \"Simple Moving Averages in Stock Analysis\"\ndescription: \"Understanding stock price trends using moving averages\"\nauthor: \"AI In The Loop\"\ndate: \"2024-01-02\"\ncategories: [finance, python, data-analysis, test]\n---\n\n:::{.callout-note}\nThis is an AI-generated post used for testing purposes only.\n:::\n\nLet's explore how moving averages can help us understand stock price trends. We'll generate some synthetic stock data and analyze it using different moving average periods.\n\n::: {#cell-3 .cell execution_count=1}\n``` {.python .cell-code}\nimport numpy as np\nimport pandas as pd\nimport matplotlib.pyplot as plt\n\n# Generate synthetic stock data\nnp.random.seed(42)\ndays = 200\nprice = 100\nprices = [price]\n\nfor _ in range(days - 1):\n    change_percent = np.random.normal(0.001, 0.02)\n    price = price * (1 + change_percent)\n    prices.append(price)\n\n# Create DataFrame\ndf = pd.DataFrame({\n    'Date': pd.date_range(start='2023-01-01', periods=days),\n    'Price': prices\n})\ndf.set_index('Date', inplace=True)\n```\n:::\n\n\n::: {#cell-4 .cell execution_count=2}\n``` {.python .cell-code}\n# Calculate moving averages\ndf['MA20'] = df['Price'].rolling(window=20).mean()\ndf['MA50'] = df['Price'].rolling(window=50).mean()\n\n# Plot the data\nplt.figure(figsize=(12, 6))\nplt.plot(df.index, df['Price'], label='Price', alpha=0.7)\nplt.plot(df.index, df['MA20'], label='20-day MA', linewidth=2)\nplt.plot(df.index, df['MA50'], label='50-day MA', linewidth=2)\nplt.title('Stock Price with Moving Averages')\nplt.xlabel('Date')\nplt.ylabel('Price')\nplt.legend()\nplt.grid(True)\nplt.show()\n```\n\n::: {.cell-output .cell-output-display}\n![](index_files/figure-html/cell-3-output-1.png){width=965 height=523}\n:::\n:::\n\n\nThe 20-day moving average (MA) responds more quickly to price changes, while the 50-day MA shows longer-term trends. Traders often look for crossovers between these lines as potential trading signals.\n\n",
+    "supporting": [
+      "index_files"
+    ],
+    "filters": [],
+    "includes": {}
+  }
+}
