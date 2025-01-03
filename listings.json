@@ -1,0 +1,10 @@
+[
+  {
+    "listing": "/index.html",
+    "items": [
+      "/posts/simple-stock-price-analysis/index.html",
+      "/posts/nba-shot-analysis/index.html",
+      "/posts/basic-ml-sklearn/index.html"
+    ]
+  }
+]
